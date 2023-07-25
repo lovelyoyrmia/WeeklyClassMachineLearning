@@ -1,10 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.core.files.uploadedfile import InMemoryUploadedFile
 import io
 from PIL import Image
-import datetime
 import requests
 from kue.utils import Model
 from kue.models import KueIndonesia
