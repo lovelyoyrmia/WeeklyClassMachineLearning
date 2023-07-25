@@ -1,4 +1,4 @@
 Django
-tensorflow-cpu
+tensorflow-gpu
 Pillow
 requests
