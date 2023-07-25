@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

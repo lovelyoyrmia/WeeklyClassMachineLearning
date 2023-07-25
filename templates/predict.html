@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Predict{% endblock %}
+{% block content %}
+<div class="wrapper">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="url_image">Input Image Url</label>
+        <input id="url_image" name="url_image" type="text" placeholder="Enter your url" onchange="readText(this)" />
+        <p style="font-weight: bold;">Or</p>
+        <div class="file-upload-wrapper" data-text="Select your file!">
+            <input id="file_image" name="image" type="file" class="file-upload-field" value="" onchange="readFile(this)" accept="image/*">
+        </div>
+        <button type="submit" class="button-primary">Predict</button>
+        <button type="button" onclick="remove()" class="button-remove">Remove</button>
+    </form>
+</div>
+<script>
+    function readFile(input) {
+        $('#url_image').attr('disabled', true)
+        $(input).parent(".file-upload-wrapper").attr("data-text", $(input).val().replace(/.*(\/|\\)/, '') );
+    }
+    function readText(input) {
+        if ($(input).val()){
+            $('#file_image').attr('disabled', true)
+        } else {
+            $('#file_image').attr('disabled', false)
+        }
+    }
+    function remove() {
+        window.location.reload()    
+    }
+</script>
+{% endblock %}
