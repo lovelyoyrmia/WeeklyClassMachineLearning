@@ -1,4 +1,4 @@
-# Weekly Class Machine Learning 3
+# Weekly Class Machine Learning
 
 ## Deploying Model Machine Learning with Django
 
